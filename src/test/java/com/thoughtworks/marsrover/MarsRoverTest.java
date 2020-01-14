@@ -10,16 +10,19 @@ public class MarsRoverTest {
     public void should_initialized_when_execute_InitializeCommand() {
         MarsRover marsRover = new MarsRover();
         String result = marsRover.execute(new InitializeCommand(new Location(0, 0), new NDirection()));
-        assertThat(result, is("location:(0, 0), direction: N"));
+        assertThat(result, is(expected(0, 0, "N")));
+    }
+
+    private String expected(int x, int y, String direction) {
+        return String.format("location:(%d, %d), direction: %s", x, y, direction);
     }
 
     @Test
     public void should_initialized_when_execute_InitializeCommand_0_1_N() {
         MarsRover marsRover = new MarsRover();
         String result = marsRover.execute(new InitializeCommand(new Location(0, 1), new NDirection()));
-        assertThat(result, is("location:(0, 1), direction: N"));
+        assertThat(result, is(expected(0, 1, "N")));
     }
-
 
     @Test
     public void should_be_W_when_turn_left_and_given_N() {
@@ -28,6 +31,6 @@ public class MarsRoverTest {
 
         String result = marsRover.execute(new TurnLeftCommand());
 
-        assertThat(result, is("location:(0, 0), direction: W"));
+        assertThat(result, is(expected(0, 0, "W")));
     }
 }
