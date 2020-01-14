@@ -4,7 +4,7 @@ public class Location {
     private int x;
     private int y;
 
-    public Location(int x, int y) {
+    Location(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -22,19 +22,19 @@ public class Location {
         return String.format("location:(%d, %d)", this.x, this.y);
     }
 
-    public Location increaseX() {
+    Location increaseX() {
         return new Location(this.x + 1, this.y);
     }
 
-    public Location decreaseX() {
+    Location decreaseX() {
         return new Location(this.x - 1, this.y);
     }
 
-    public Location decreaseY() {
+    Location decreaseY() {
         return new Location(this.x, this.y - 1);
     }
 
-    public Location increaseY() {
+    Location increaseY() {
         return new Location(this.x, this.y + 1);
     }
 }

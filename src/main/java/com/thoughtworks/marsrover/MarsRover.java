@@ -9,20 +9,20 @@ public class MarsRover {
         return this.location + ", " + this.direction;
     }
 
-    public String execute(Command command) {
+    String execute(Command command) {
         command.run(this);
         return this.toString();
     }
 
-    public void change(Direction direction) {
+    void change(Direction direction) {
         this.direction = direction;
     }
 
-    public Location location() {
+    Location location() {
         return this.location;
     }
 
-    public void change(Location location) {
+    void change(Location location) {
         this.location = location;
     }
 

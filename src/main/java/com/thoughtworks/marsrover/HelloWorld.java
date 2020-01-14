@@ -1,13 +1,14 @@
 package com.thoughtworks.marsrover;
 
-public class HelloWorld {
+class HelloWorld {
     private Dependency dependency;
 
-    public HelloWorld(Dependency dependency) {
+    HelloWorld(Dependency dependency) {
 
         this.dependency = dependency;
     }
-    public String beenCalled() {
+
+    String beenCalled() {
         return dependency.say();
     }
 }

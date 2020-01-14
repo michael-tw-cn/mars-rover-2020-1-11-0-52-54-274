@@ -1,7 +1,7 @@
 package com.thoughtworks.marsrover;
 
-public class Dependency {
-    public String say(){
+class Dependency {
+    String say(){
         return "Leave me alone.";
     }
 }
