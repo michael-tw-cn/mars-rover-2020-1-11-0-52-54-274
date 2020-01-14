@@ -17,10 +17,14 @@ public class MarsRover {
 
     public String execute(Command command) {
         if (command instanceof TurnLeftCommand) {
-            this.direction = new WDirection();
+            this.direction.turnLeft(this);
         } else if (command instanceof TurnRightCommand) {
-            this.direction = new EDirection();
+            this.direction.turnRight(this);
         }
         return this.toString();
+    }
+
+    public void change(Direction direction) {
+        this.direction = direction;
     }
 }
