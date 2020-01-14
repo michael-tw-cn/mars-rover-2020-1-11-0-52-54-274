@@ -16,4 +16,9 @@ public class Location {
     public int y() {
         return this.y;
     }
+
+    @Override
+    public String toString() {
+        return String.format("location:(%d, %d)", this.x, this.y);
+    }
 }
