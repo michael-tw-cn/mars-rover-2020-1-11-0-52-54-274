@@ -21,20 +21,20 @@ public class MarsRover {
         } else if (command instanceof TurnRightCommand) {
             this.direction.turnRight(this);
         } else if (command instanceof MoveCommand) {
-            if (this.direction instanceof NDirection) {
-                this.location = this.location.increaseX();
-            } else if (direction instanceof SDirection) {
-                this.location = this.location.decreaseX();
-            } else if (direction instanceof WDirection) {
-                this.location = this.location.decreaseY();
-            } else if (direction instanceof EDirection) {
-                this.location = this.location.increaseY();
-            }
+            this.direction.move(this);
         }
         return this.toString();
     }
 
     public void change(Direction direction) {
         this.direction = direction;
+    }
+
+    public Location location() {
+        return this.location;
+    }
+
+    public void change(Location location) {
+        this.location = location;
     }
 }

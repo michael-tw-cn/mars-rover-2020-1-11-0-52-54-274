@@ -10,4 +10,6 @@ abstract class Direction {
     public abstract void turnLeft(MarsRover marsRover);
 
     public abstract void turnRight(MarsRover marsRover);
+
+    public abstract void move(MarsRover marsRover);
 }
