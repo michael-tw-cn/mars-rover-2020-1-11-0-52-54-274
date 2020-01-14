@@ -5,4 +5,9 @@ public class WDirection extends Direction {
     public void turnLeft(MarsRover marsRover) {
 
     }
+
+    @Override
+    public void turnRight(MarsRover marsRover) {
+
+    }
 }

@@ -5,4 +5,9 @@ public class NDirection extends Direction {
     public void turnLeft(MarsRover marsRover) {
         marsRover.change(new WDirection());
     }
+
+    @Override
+    public void turnRight(MarsRover marsRover) {
+        marsRover.change(new EDirection());
+    }
 }

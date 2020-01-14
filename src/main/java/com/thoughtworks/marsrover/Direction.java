@@ -9,8 +9,5 @@ abstract class Direction {
 
     public abstract void turnLeft(MarsRover marsRover);
 
-    public void turnRight(MarsRover marsRover) {
-        marsRover.change(new EDirection());
-
-    }
+    public abstract void turnRight(MarsRover marsRover);
 }
