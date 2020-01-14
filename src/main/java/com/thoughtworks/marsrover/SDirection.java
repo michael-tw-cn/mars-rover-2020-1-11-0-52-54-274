@@ -8,6 +8,6 @@ public class SDirection extends Direction {
 
     @Override
     public void turnRight(MarsRover marsRover) {
-
+        marsRover.change(new WDirection());
     }
 }
