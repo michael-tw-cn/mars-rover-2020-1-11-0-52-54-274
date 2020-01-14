@@ -10,16 +10,7 @@ public class MarsRover {
     }
 
     public String execute(Command command) {
-        if (command instanceof InitializeCommand) {
-            this.location = ((InitializeCommand) command).location();
-            this.direction = ((InitializeCommand) command).direction();
-        } else if (command instanceof TurnLeftCommand) {
-            this.direction.turnLeft(this);
-        } else if (command instanceof TurnRightCommand) {
-            this.direction.turnRight(this);
-        } else if (command instanceof MoveCommand) {
-            this.direction.move(this);
-        }
+        command.run(this);
         return this.toString();
     }
 
@@ -33,5 +24,9 @@ public class MarsRover {
 
     public void change(Location location) {
         this.location = location;
+    }
+
+    public Direction direction() {
+        return this.direction;
     }
 }

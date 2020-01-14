@@ -16,4 +16,10 @@ public class InitializeCommand extends Command {
     public Direction direction() {
         return this.direction;
     }
+
+    @Override
+    public void run(MarsRover marsRover) {
+        marsRover.change(this.location);
+        marsRover.change(this.direction);
+    }
 }
