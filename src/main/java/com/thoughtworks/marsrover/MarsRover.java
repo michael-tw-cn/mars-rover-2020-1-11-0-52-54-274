@@ -21,7 +21,11 @@ public class MarsRover {
         } else if (command instanceof TurnRightCommand) {
             this.direction.turnRight(this);
         } else if (command instanceof MoveCommand) {
-            this.location = this.location.increaseX();
+            if (this.direction instanceof NDirection) {
+                this.location = this.location.increaseX();
+            } else if (direction instanceof SDirection) {
+                this.location = this.location.decreaseX();
+            }
         }
         return this.toString();
     }

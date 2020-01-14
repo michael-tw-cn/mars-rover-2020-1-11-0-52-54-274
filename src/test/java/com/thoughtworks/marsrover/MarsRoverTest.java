@@ -114,4 +114,14 @@ public class MarsRoverTest {
 
         assertThat(result, is(expected(1, 0, "N")));
     }
+
+    @Test
+    public void should_decrease_x_when_move_and_given_current_direction_is_S() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.execute(new InitializeCommand(new Location(0,0), new SDirection()));
+
+        String result = marsRover.execute(new MoveCommand());
+
+        assertThat(result, is(expected(-1, 0, "S")));
+    }
 }
