@@ -1,4 +1,4 @@
 package com.thoughtworks.marsrover;
 
-public class TurnLeftCommand {
+public class TurnLeftCommand extends Command {
 }

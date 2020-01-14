@@ -1,13 +1,5 @@
 package com.thoughtworks.marsrover;
 
-public class NDirection {
+public class NDirection extends Direction {
 
-    @Override
-    public String toString() {
-        return "direction: N";
-    }
-
-    public void turnLeft() {
-
-    }
 }

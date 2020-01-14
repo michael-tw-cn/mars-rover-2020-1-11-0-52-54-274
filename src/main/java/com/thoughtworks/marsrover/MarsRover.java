@@ -1,12 +1,26 @@
 package com.thoughtworks.marsrover;
 
 public class MarsRover {
+    private Location location;
+    private Direction direction;
+
     public String execute(InitializeCommand initializeCommand) {
-        return initializeCommand.location() + ", " + initializeCommand.direction();
+        this.location = initializeCommand.location();
+        this.direction = initializeCommand.direction();
+        return this.toString();
     }
 
-    public String execute(TurnLeftCommand turnLeftCommand) {
+    @Override
+    public String toString() {
+        return this.location + ", " + this.direction;
+    }
 
-        return "location:(0, 0), direction: W";
+    public String execute(Command command) {
+        if (command instanceof TurnLeftCommand) {
+            this.direction = new WDirection();
+        } else if (command instanceof TurnRightCommand) {
+            this.direction = new EDirection();
+        }
+        return this.toString();
     }
 }

@@ -2,9 +2,9 @@ package com.thoughtworks.marsrover;
 
 public class InitializeCommand {
     private Location location;
-    private NDirection direction;
+    private Direction direction;
 
-    public InitializeCommand(Location location, NDirection direction) {
+    public InitializeCommand(Location location, Direction direction) {
         this.location = location;
         this.direction = direction;
     }
@@ -13,7 +13,7 @@ public class InitializeCommand {
         return this.location;
     }
 
-    public NDirection direction() {
+    public Direction direction() {
         return this.direction;
     }
 }
