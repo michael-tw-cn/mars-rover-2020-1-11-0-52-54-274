@@ -21,4 +21,13 @@ public class MarsRoverTest {
     }
 
 
+    @Test
+    public void should_be_W_when_turn_left_and_given_N() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.execute(new InitializeCommand(new Location(0,0), new NDirection()));
+
+        String result = marsRover.execute(new TurnLeftCommand());
+
+        assertThat(result, is("location:(0, 0), direction: W"));
+    }
 }

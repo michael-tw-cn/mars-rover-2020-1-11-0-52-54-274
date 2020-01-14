@@ -6,4 +6,8 @@ public class NDirection {
     public String toString() {
         return "direction: N";
     }
+
+    public void turnLeft() {
+
+    }
 }
