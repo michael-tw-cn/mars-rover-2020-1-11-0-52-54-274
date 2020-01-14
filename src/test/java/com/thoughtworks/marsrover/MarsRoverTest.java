@@ -63,4 +63,14 @@ public class MarsRoverTest {
 
         assertThat(result, is(expected(0, 0, "S")));
     }
+
+    @Test
+    public void should_be_E_when_turn_left_and_given_S() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.execute(new InitializeCommand(new Location(0,0), new SDirection()));
+
+        String result = marsRover.execute(new TurnLeftCommand());
+
+        assertThat(result, is(expected(0, 0, "E")));
+    }
 }
