@@ -1,6 +1,6 @@
 package com.thoughtworks.marsrover;
 
-public class InitializeCommand {
+public class InitializeCommand extends Command {
     private Location location;
     private Direction direction;
 
