@@ -20,6 +20,8 @@ public class MarsRover {
             this.direction.turnLeft(this);
         } else if (command instanceof TurnRightCommand) {
             this.direction.turnRight(this);
+        } else if (command instanceof MoveCommand) {
+            this.location = this.location.increaseX();
         }
         return this.toString();
     }

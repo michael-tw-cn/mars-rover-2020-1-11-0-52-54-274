@@ -21,4 +21,8 @@ public class Location {
     public String toString() {
         return String.format("location:(%d, %d)", this.x, this.y);
     }
+
+    public Location increaseX() {
+        return new Location(this.x + 1, this.y);
+    }
 }
