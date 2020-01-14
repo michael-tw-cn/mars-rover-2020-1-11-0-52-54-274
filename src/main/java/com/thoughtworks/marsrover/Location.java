@@ -33,4 +33,8 @@ public class Location {
     public Location decreaseY() {
         return new Location(this.x, this.y - 1);
     }
+
+    public Location increaseY() {
+        return new Location(this.x, this.y + 1);
+    }
 }

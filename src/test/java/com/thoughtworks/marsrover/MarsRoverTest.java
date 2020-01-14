@@ -126,12 +126,22 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_decrease_x_when_move_and_given_current_direction_is_W() {
+    public void should_decrease_y_when_move_and_given_current_direction_is_W() {
         MarsRover marsRover = new MarsRover();
         marsRover.execute(new InitializeCommand(new Location(0,0), new WDirection()));
 
         String result = marsRover.execute(new MoveCommand());
 
         assertThat(result, is(expected(0, -1, "W")));
+    }
+
+    @Test
+    public void should_increase_y_when_move_and_given_current_direction_is_E() {
+        MarsRover marsRover = new MarsRover();
+        marsRover.execute(new InitializeCommand(new Location(0,0), new EDirection()));
+
+        String result = marsRover.execute(new MoveCommand());
+
+        assertThat(result, is(expected(0, 1, "E")));
     }
 }
