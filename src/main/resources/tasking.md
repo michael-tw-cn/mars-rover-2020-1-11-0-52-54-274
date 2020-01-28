@@ -52,3 +52,23 @@ then: (0, -1)
 given: (0, 0), E
 when: M
 then: (0, 1)
+
+given: 0,0,N
+when: parse
+then: return InitializedCommand
+
+given: M
+when: parse
+then return MoveCommand
+
+given: L
+when: parse
+then: return TurnLeftCommand
+
+given: R
+when: parse
+then: return TurnRightCommand
+
+given: P
+when: parse
+then: throw Illegal argument exception

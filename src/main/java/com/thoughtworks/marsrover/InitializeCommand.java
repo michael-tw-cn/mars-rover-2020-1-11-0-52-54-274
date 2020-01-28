@@ -14,4 +14,12 @@ public class InitializeCommand extends Command {
         marsRover.change(this.location);
         marsRover.change(this.direction);
     }
+
+    public Location location() {
+        return this.location;
+    }
+
+    public Direction direction() {
+        return this.direction;
+    }
 }

@@ -1,8 +1,16 @@
 package com.thoughtworks.marsrover;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
 public class MarsRover {
     private Location location;
     private Direction direction;
+    private CommandParser commandParser;
+
+    public MarsRover(CommandParser commandParser) {
+        this.commandParser = commandParser;
+    }
 
     @Override
     public String toString() {
@@ -28,5 +36,14 @@ public class MarsRover {
 
     public Direction direction() {
         return this.direction;
+    }
+
+    String execute(List<String> commands)
+            throws ClassNotFoundException, NoSuchMethodException,
+            InstantiationException, IllegalAccessException, InvocationTargetException {
+        for (String command : commands) {
+            this.execute(this.commandParser.parse(command));
+        }
+        return this.toString();
     }
 }
