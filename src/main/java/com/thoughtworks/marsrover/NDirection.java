@@ -13,6 +13,7 @@ public class NDirection extends Direction {
 
     @Override
     public void move(MarsRover marsRover) {
-        marsRover.change(marsRover.location().increaseX());
+        Location location = marsRover.isReversed() ? marsRover.location().decreaseX() :marsRover.location().increaseX();
+        marsRover.change(location);
     }
 }

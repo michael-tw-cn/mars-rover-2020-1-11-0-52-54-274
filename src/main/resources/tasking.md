@@ -72,3 +72,28 @@ then: return TurnRightCommand
 given: P
 when: parse
 then: throw Illegal argument exception
+
+=========== story 2 ====================
+given: (0,0), N, B
+when: M
+then: (-1, 0)
+
+given: (0,0), S, B
+when: M
+then: (1, 0)
+
+given: (0,0), W, B
+when: M
+then: (0, 1)
+
+given: (0,0), E, B
+when: M
+then: (0, -1)
+
+given: (0,0), E, B
+when: M
+then: (0, -1)
+
+given: B
+when: parse
+then: return ReverseCommand

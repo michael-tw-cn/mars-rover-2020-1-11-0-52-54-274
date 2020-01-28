@@ -7,6 +7,7 @@ public class MarsRover {
     private Location location;
     private Direction direction;
     private CommandParser commandParser;
+    private boolean reversed;
 
     public MarsRover(CommandParser commandParser) {
         this.commandParser = commandParser;
@@ -45,5 +46,13 @@ public class MarsRover {
             this.execute(this.commandParser.parse(command));
         }
         return this.toString();
+    }
+
+    void reverse() {
+        this.reversed = true;
+    }
+
+    public boolean isReversed() {
+        return this.reversed;
     }
 }

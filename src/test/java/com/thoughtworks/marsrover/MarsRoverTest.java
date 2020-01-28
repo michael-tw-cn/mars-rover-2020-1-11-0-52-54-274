@@ -162,4 +162,15 @@ public class MarsRoverTest {
         assertThat(result, is(expected(1, 0, "N")));
 
     }
+
+    @Test
+    public void should_decrease_x_when_move_and_given_current_direction_is_N_and_reversion_status_is_true() {
+        MarsRover marsRover = newMarsRover();
+        marsRover.execute(new InitializeCommand(new Location(0, 0), new NDirection()));
+        marsRover.execute(new ReverseCommand());
+
+        String result = marsRover.execute(new MoveCommand());
+
+        assertThat(result, is(expected(-1, 0, "N")));
+    }
 }
