@@ -14,6 +14,7 @@ public class EDirection extends Direction {
 
     @Override
     public void move(MarsRover marsRover) {
-        marsRover.change(marsRover.location().increaseY());
+        Location location = marsRover.isReversed() ? marsRover.location().decreaseY() : marsRover.location().increaseY();
+        marsRover.change(location);
     }
 }
