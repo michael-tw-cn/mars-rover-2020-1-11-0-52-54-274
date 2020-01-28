@@ -23,6 +23,8 @@ class CommandParser {
                 return new TurnLeftCommand();
             case "R":
                 return new TurnRightCommand();
+            case "B":
+                return new ReverseCommand();
         }
         throw new IllegalArgumentException(command);
     }

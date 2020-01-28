@@ -61,4 +61,12 @@ public class CommandParserTest {
         CommandParser commandParser = new CommandParser();
         commandParser.parse("P");
     }
+
+    @Test
+    public void should_return_ReverseCommand_when_given_B() throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+        CommandParser commandParser = new CommandParser();
+        Command command = commandParser.parse("B");
+
+        assertTrue(command instanceof ReverseCommand);
+    }
 }

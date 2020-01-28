@@ -90,10 +90,6 @@ given: (0,0), E, B
 when: M
 then: (0, -1)
 
-given: (0,0), E, B
-when: M
-then: (0, -1)
-
 given: B
 when: parse
 then: return ReverseCommand
