@@ -52,7 +52,7 @@ public class MarsRover {
         this.reversed = true;
     }
 
-    public boolean isReversed() {
+    boolean isReversed() {
         return this.reversed;
     }
 }
