@@ -207,4 +207,12 @@ public class MarsRoverTest {
         assertThat(result, is(expected(0, -1, "E")));
     }
 
+    @Test
+    public void should_return_1_0_S_when_given_commands_with_B()
+            throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        List<String> commands = List.of("0,0,S", "B", "M");
+        String result = newMarsRover().execute(commands);
+
+        assertThat(result, is(expected(1, 0, "S")));
+    }
 }
