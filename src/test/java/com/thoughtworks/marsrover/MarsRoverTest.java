@@ -184,4 +184,15 @@ public class MarsRoverTest {
 
         assertThat(result, is(expected(1, 0, "S")));
     }
+
+    @Test
+    public void should_increase_y_when_move_and_given_current_direction_is_W_and_reversion_status_is_true() {
+        MarsRover marsRover = newMarsRover();
+        marsRover.execute(new InitializeCommand(new Location(0, 0), new WDirection()));
+        marsRover.execute(new ReverseCommand());
+
+        String result = marsRover.execute(new MoveCommand());
+
+        assertThat(result, is(expected(0, 1, "W")));
+    }
 }

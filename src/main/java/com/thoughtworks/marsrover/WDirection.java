@@ -13,6 +13,7 @@ public class WDirection extends Direction {
 
     @Override
     public void move(MarsRover marsRover) {
-        marsRover.change(marsRover.location().decreaseY());
+        Location location = marsRover.isReversed() ? marsRover.location().increaseY() : marsRover.location().decreaseY();
+        marsRover.change(location);
     }
 }
